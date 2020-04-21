@@ -39,7 +39,6 @@ public class ClienteResource {
 		return ResponseEntity.ok().body(obj);
 	}
 	
-	@Transactional
 	@PostMapping
 	public ResponseEntity<Void> inserir(@Valid @RequestBody ClienteNewDTO objDto){
 		Cliente obj = service.fromDTO(objDto);
