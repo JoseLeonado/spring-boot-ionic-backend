@@ -13,35 +13,38 @@ import com.leo.cursomc.services.validation.ClienteInserir;
 public class ClienteNewDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@NotEmpty(message = "O nome não pode ficar vazio")
+	@NotEmpty(message = "O campo nome não pode ficar vazio")
 	@Length(min = 5, max = 120, message = "O tamanho deve ser entre 5 e 12 caracteres")
 	private String nome;
-	
-	@NotEmpty(message = "O e-mail não pode ficar vazio")
+
+	@NotEmpty(message = "O campo e-mail não pode ficar vazio")
 	@Email(message = "E-mail inválido")
 	private String email;
-	
-	@NotEmpty(message = "O cpf/cnpj não pode ficar vazio")
+
+	@NotEmpty(message = "O campo cpf/cnpj não pode ficar vazio")
 	private String cpfOuCnpj;
-	
+
 	private Integer tipo;
 
-	@NotEmpty(message = "O lograduro não pode ficar vazio")
+	@NotEmpty(message = "O campo senha não pode ficar vazio")
+	private String senha;
+
+	@NotEmpty(message = "O campo lograduro não pode ficar vazio")
 	private String logradouro;
-	
-	@NotEmpty(message = "O numero não pode ficar vazio")
+
+	@NotEmpty(message = "O campo numero não pode ficar vazio")
 	private String numero;
-	
+
 	private String complemento;
-	
+
 	private String bairro;
-	
-	@NotEmpty(message = "O cep não pode ficar vazio")
+
+	@NotEmpty(message = "O campo cep não pode ficar vazio")
 	private String cep;
 
-	@NotEmpty(message = "O tefone1 não pode ficar vazio")
+	@NotEmpty(message = "O campo tefone1 não pode ficar vazio")
 	private String telefone1;
-	
+
 	private String telefone2;
 	private String telefone3;
 
@@ -81,6 +84,14 @@ public class ClienteNewDTO implements Serializable {
 
 	public void setTipo(Integer tipo) {
 		this.tipo = tipo;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 	public String getLogradouro() {
